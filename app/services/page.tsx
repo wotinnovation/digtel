@@ -52,7 +52,7 @@ export default function ServicesPage() {
 
       {/* Hero Section */}
       <section className="pt-48 pb-24 px-4 lg:px-6">
-        <div className="max-w-[75vw] mx-auto">
+        <div className="w-[96%] md:max-w-[75vw] mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/5 mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
             <span className="text-[10px] font-black uppercase tracking-widest text-black/40">Expertise</span>
@@ -75,10 +75,10 @@ export default function ServicesPage() {
         {serviceData.map((service) => (
           <div 
             key={service.title}
-            className="max-w-[75vw] mx-auto soft-card p-6 lg:p-8 bg-white reveal"
+            className="w-[96%] md:max-w-[75vw] mx-auto soft-card p-6 lg:p-8 bg-white reveal"
           >
             {/* Top Image Section */}
-            <div className="relative aspect-[21/9] w-full rounded-[2rem] overflow-hidden mb-12">
+            <div className="relative aspect-[4/3] md:aspect-[21/9] w-full rounded-[2rem] overflow-hidden mb-12">
               <img
                 src={service.image}
                 alt={service.title}

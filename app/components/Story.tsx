@@ -4,7 +4,7 @@ import { Settings, Lightbulb, TrendingUp, ArrowRight } from "lucide-react";
 export default function Story() {
   return (
     <section id="story" className="py-24 lg:py-32 px-4 lg:px-6">
-      <div className="max-w-[75vw] mx-auto grid lg:grid-cols-2 gap-20">
+      <div className="w-[96%] md:max-w-[75vw] mx-auto grid lg:grid-cols-2 gap-20 px-2 md:px-0">
         {/* Left text block - High Contrast Black Card */}
         <div className="soft-card-dark p-12 lg:p-16 h-full flex flex-col justify-center">
           <p className="reveal text-xs font-semibold uppercase tracking-widest text-white/40 mb-4">

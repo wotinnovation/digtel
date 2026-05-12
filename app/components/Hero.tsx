@@ -12,18 +12,19 @@ export default function Hero() {
       ref={ref}
       className="relative h-[90vh] min-h-[600px] flex items-center overflow-hidden bg-white"
     >
-      {/* Spline 3D Background - Strict Isolation */}
-      <div className="absolute inset-0 z-0 opacity-80 pointer-events-none select-none touch-none">
+      {/* Spline 3D Background - Interactive */}
+      
+      <div className="absolute inset-0 z-0 opacity-80 select-none">
         <Suspense fallback={<div className="absolute inset-0 bg-white" />}>
           <Spline
             scene="/bg/Serenity in Symmetry.spline"
-            className="w-full h-full pointer-events-none"
-            style={{ pointerEvents: 'none' }}
+            className="w-full h-full"
           />
         </Suspense>
       </div>
+      
 
-      <div className="max-w-[75vw] mx-auto w-full relative z-10">
+      <div className="w-[96%] md:max-w-[75vw] mx-auto relative z-10 px-2 md:px-0 pt-32 md:pt-0">
         <div className="max-w-4xl">
           {/* Badge */}
           <div className="reveal inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/5 mb-10 border border-black/5">
@@ -41,24 +42,24 @@ export default function Hero() {
           </h1>
 
           {/* Paragraph */}
-          <p className="reveal text-lg lg:text-2xl text-black/50 font-medium leading-relaxed mb-16 max-w-2xl">
+          <p className="reveal hidden md:block text-lg lg:text-2xl text-black/50 font-medium leading-relaxed mb-16 max-w-2xl">
             A UAE-born digital creative agency that helps startups and enterprises scale through
             high-fidelity design and engineering.
           </p>
 
           {/* CTA row */}
-          <div className="reveal flex flex-wrap items-center gap-6">
+          <div className="reveal flex flex-wrap items-center gap-4 md:gap-6">
             <Link
               id="hero-start-project"
               href="/contact"
-              className="soft-button-dark px-12 py-5 text-[14px] font-bold uppercase tracking-widest shadow-2xl"
+              className="soft-button-dark px-8 md:px-12 py-3.5 md:py-5 text-[12px] md:text-[14px] font-bold uppercase tracking-widest shadow-2xl"
             >
               Start a project
             </Link>
             <a
               id="hero-see-work"
               href="#reels"
-              className="soft-button-light px-12 py-5 text-[14px] font-bold uppercase tracking-widest group flex items-center gap-2"
+              className="soft-button-light px-8 md:px-12 py-3.5 md:py-5 text-[12px] md:text-[14px] font-bold uppercase tracking-widest group flex items-center gap-2"
             >
               See our work <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>

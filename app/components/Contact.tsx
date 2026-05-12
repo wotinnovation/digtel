@@ -26,7 +26,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-24 lg:py-32 px-4 lg:px-6">
-      <div className="max-w-[75vw] mx-auto grid lg:grid-cols-2 gap-20">
+      <div className="w-[96%] md:max-w-[75vw] mx-auto grid lg:grid-cols-2 gap-20">
         {/* Left */}
         <div>
           <p className="reveal text-xs font-semibold uppercase tracking-widest text-black/40 mb-3">

@@ -19,7 +19,7 @@ export default function Footer() {
 
   return (
     <footer className="pt-24 pb-12 px-4 lg:px-6">
-      <div className="max-w-[75vw] mx-auto soft-card p-10 lg:p-16">
+      <div className="w-[96%] md:max-w-[75vw] mx-auto soft-card p-10 lg:p-16">
         {/* Top grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-16">
           {/* Brand */}

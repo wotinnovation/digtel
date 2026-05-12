@@ -35,7 +35,7 @@ const reels = [
 export default function Reels() {
   return (
     <section id="reels" className="py-24 lg:py-32 px-4 lg:px-6">
-      <div className="max-w-[75vw] mx-auto">
+      <div className="w-[96%] md:max-w-[75vw] mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <p className="reveal text-xs font-semibold uppercase tracking-widest text-black/40 mb-3">
@@ -53,11 +53,11 @@ export default function Reels() {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-8 pb-10 md:grid md:grid-cols-2 lg:grid-cols-4 md:overflow-visible md:pb-0">
           {reels.map((reel) => (
             <div
               key={reel.id}
-              className="soft-card reveal group relative p-3 transition-all duration-500 hover:translate-y-[-8px]"
+              className="soft-card reveal group relative p-3 transition-all duration-500 hover:translate-y-[-8px] min-w-[75vw] sm:min-w-[300px] md:min-w-0 snap-center"
             >
               <div 
                 className="relative w-full overflow-hidden rounded-[2rem] bg-stone-100"

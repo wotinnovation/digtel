@@ -40,11 +40,11 @@ export default function Process() {
   };
 
   return (
-    <section id="process" className="py-24 lg:py-32 px-4 lg:px-6 overflow-hidden">
-      <div className="max-w-[75vw] mx-auto">
-        <div className="grid lg:grid-cols-[1fr_2fr] gap-32 items-center">
-          
-          {/* Left Text */}
+    <section id="process" className="py-24 lg:py-32 overflow-hidden hidden md:block">
+      <div className="flex flex-col lg:flex-row items-center">
+        
+        {/* Left Text - Aligned to the 75vw grid */}
+        <div className="w-full lg:w-[40vw] lg:pl-[12.5vw] px-[2%] md:px-6 mb-20 lg:mb-0">
           <div className="reveal">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full soft-card bg-white mb-8">
               <span className="w-1.5 h-1.5 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.5)]" />
@@ -72,33 +72,35 @@ export default function Process() {
               </button>
             </div>
           </div>
+        </div>
 
-          {/* Right Slider */}
+        {/* Right Slider - 100vw Feel (Bleeds to edge) */}
+        <div className="w-full lg:w-[60vw] lg:pr-0">
           <div 
             ref={scrollRef}
-            className="flex gap-10 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-12 pt-4 pl-32"
+            className="flex gap-10 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-12 pt-4 px-[2%] lg:pl-10 lg:pr-[12.5vw]"
           >
             {steps.map((step) => (
               <div
                 key={step.id}
-                className="min-w-[85vw] sm:min-w-[500px] snap-start soft-card bg-white p-12 lg:p-14 relative flex flex-col h-[550px] reveal"
+                className="min-w-[85vw] lg:min-w-[450px] snap-start soft-card bg-white p-10 lg:p-14 relative flex flex-col h-[500px] lg:h-[550px] reveal"
               >
                 {/* Red Icon Box */}
-                <div className="w-16 h-16 rounded-2xl bg-[#ff4d4d] flex items-center justify-center shadow-[0_15px_30px_rgba(255,77,77,0.4)] mb-12 relative overflow-hidden group">
+                <div className="w-16 h-16 rounded-2xl bg-[#ff4d4d] flex items-center justify-center shadow-[0_15px_30px_rgba(255,77,77,0.4)] mb-10 relative overflow-hidden group">
                   <div className="absolute inset-0 bg-white/10 animate-pulse" />
                   <div className="relative z-10">{step.icon}</div>
                 </div>
 
-                <h3 className="text-3xl lg:text-4xl font-black tracking-tight text-black mb-8">
+                <h3 className="text-3xl lg:text-4xl font-black tracking-tight text-black mb-6">
                   {step.title}
                 </h3>
                 
-                <p className="text-base lg:text-lg text-black/50 leading-relaxed font-medium mb-12 max-w-sm">
+                <p className="text-base lg:text-lg text-black/50 leading-relaxed font-medium mb-10 max-w-sm">
                   {step.desc}
                 </p>
 
                 <div className="mt-auto flex items-center justify-between">
-                  <div className="px-10 py-3.5 rounded-full bg-black/5 text-[10px] font-black uppercase tracking-[0.2em] text-black/40">
+                  <div className="px-8 py-3 rounded-full bg-black/5 text-[10px] font-black uppercase tracking-[0.2em] text-black/40">
                     {step.duration}
                   </div>
                   <div className="text-4xl lg:text-5xl font-[1000] tracking-tighter text-black/5 select-none">

@@ -6,7 +6,7 @@ export default function CTA() {
   return (
     <section className="py-24 lg:py-32 px-4 lg:px-6">
       {/* Light Soft UI CTA Card */}
-      <div className="max-w-[75vw] mx-auto soft-card bg-[#fcfcfd] p-16 lg:p-28 text-center relative overflow-hidden group">
+      <div className="w-[96%] md:max-w-[75vw] mx-auto soft-card bg-[#fcfcfd] p-16 lg:p-28 text-center relative overflow-hidden group">
         
         {/* Subtle decorative elements */}
         <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#f0f0f3] rounded-full shadow-[inset_10px_10px_30px_#d1d1d1,inset_-10px_-10px_30px_#ffffff] opacity-50 transition-transform duration-1000 group-hover:scale-110" />

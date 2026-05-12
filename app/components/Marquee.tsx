@@ -9,16 +9,16 @@ export default function Marquee() {
   const doubled = [...BRANDS, ...BRANDS];
 
   return (
-    <section className="py-12 overflow-hidden bg-white">
-      <div className="max-w-[75vw] mx-auto relative">
-        <p className="reveal text-center text-3xl lg:text-5xl font-[1000] tracking-[0.2em] uppercase italic text-black mb-16">
+    <section className="py-8 md:py-12 overflow-hidden bg-white">
+      <div className="w-[96%] md:max-w-[75vw] mx-auto relative">
+        <p className="reveal text-center text-3xl lg:text-5xl font-[1000] tracking-[0.2em] uppercase italic text-black mb-8 md:mb-16">
           Trusted by Leading Brands
         </p>
         
-        <div className="relative py-24">
+        <div className="relative py-10 md:py-24">
           <div
             className="flex gap-20 items-center whitespace-nowrap"
-            style={{ animation: "marquee 40s linear infinite" }}
+            style={{ animation: "marquee 12s linear infinite" }}
           >
             {doubled.map((brand, i) => (
               <span

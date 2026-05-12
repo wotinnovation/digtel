@@ -40,7 +40,7 @@ export default function Services() {
 
   return (
     <section id="services" className="py-16 lg:py-20 px-4 lg:px-6">
-      <div className="max-w-[75vw] mx-auto grid lg:grid-cols-[1fr_1.3fr] gap-16 lg:gap-24 items-start">
+      <div className="w-[96%] md:max-w-[75vw] mx-auto grid lg:grid-cols-[1fr_1.3fr] gap-16 lg:gap-24 items-start px-2 md:px-0">
 
         {/* Left Content */}
         <div className="flex flex-col h-full lg:sticky lg:top-32">
@@ -59,14 +59,14 @@ export default function Services() {
             </p>
           </div>
 
-          {/* Dynamic Bottom-Left Image */}
-          <div className="hidden lg:block overflow-hidden rounded-[2.5rem] soft-card relative aspect-[4/3] w-full max-w-sm mt-auto">
+          {/* Dynamic Bottom-Left Image - Increased Size */}
+          <div className="hidden lg:block overflow-hidden rounded-[3.5rem] soft-card relative aspect-square w-full max-w-md mt-16">
             <div
               key={currentService.image}
               className="absolute inset-0 bg-cover bg-center transition-all duration-1000 animate-fade-in"
               style={{ backgroundImage: `url('${currentService.image}')` }}
             />
-            <div className="absolute inset-0 bg-black/5 mix-blend-overlay" />
+            <div className="absolute inset-0 bg-black/10 mix-blend-overlay" />
           </div>
         </div>
 

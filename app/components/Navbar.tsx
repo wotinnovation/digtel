@@ -21,7 +21,7 @@ export default function Navbar() {
           : "bg-transparent py-8"
       }`}
     >
-      <nav className="max-w-[75vw] mx-auto flex items-center justify-between px-2">
+      <nav className="w-[96%] md:max-w-[75vw] mx-auto flex items-center justify-between px-2">
         {/* Logo - Soft style text shadow */}
         <Link href="/" className="text-2xl lg:text-3xl font-[1000] tracking-tighter select-none text-black drop-shadow-[2px_2px_2px_rgba(255,255,255,0.8)]">
           Digtel
@@ -67,7 +67,7 @@ export default function Navbar() {
           open ? "max-h-[500px] opacity-100 py-12 shadow-2xl" : "max-h-0 opacity-0 py-0"
         }`}
       >
-        <div className="max-w-[75vw] mx-auto flex flex-col gap-10 text-2xl font-[1000] tracking-tighter">
+        <div className="w-[96%] mx-auto flex flex-col gap-10 text-2xl font-[1000] tracking-tighter">
           {links.map((l) => (
             <Link
               key={l.label}
