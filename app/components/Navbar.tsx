@@ -1,5 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -11,91 +13,89 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const links = [
-    { label: "Services", href: "#services" },
-    { label: "Story", href: "#story" },
-    { label: "Work", href: "#reels" },
-    { label: "Contact", href: "#contact" },
-  ];
-
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/95 backdrop-blur-sm border-b border-black/8 shadow-[0_1px_16px_rgba(0,0,0,0.06)]" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
+        scrolled 
+          ? "bg-[#f0f0f3]/80 backdrop-blur-xl border-b border-black/5 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.05)]" 
+          : "bg-transparent py-8"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#" className="text-xl font-bold tracking-tight select-none">
+      <nav className="max-w-[75vw] mx-auto flex items-center justify-between px-2">
+        {/* Logo - Soft style text shadow */}
+        <Link href="/" className="text-2xl lg:text-3xl font-[1000] tracking-tighter select-none text-black drop-shadow-[2px_2px_2px_rgba(255,255,255,0.8)]">
           Digtel
-        </a>
+        </Link>
 
         {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-8 text-sm font-medium text-black/70">
+        <ul className="hidden md:flex items-center gap-14 text-[11px] font-black uppercase tracking-[0.3em] text-black/40">
           {links.map((l) => (
             <li key={l.label}>
-              <a
+              <Link
                 href={l.href}
-                className="relative hover:text-black transition-colors duration-200 after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+                className="relative hover:text-black transition-colors duration-300 after:absolute after:-bottom-1 after:left-0 after:h-[2.5px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
               >
                 {l.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
 
-        {/* CTA */}
-        <div className="hidden md:flex items-center gap-3">
-          <a
-            href="#contact"
-            className="text-sm font-semibold px-5 py-2 bg-black text-white rounded-full hover:bg-black/85 transition-colors duration-200"
+        <div className="hidden md:flex items-center">
+          <Link
+            href="/contact"
+            className="soft-button-dark text-[11px] font-black uppercase tracking-[0.2em] px-9 py-3.5 shadow-xl"
           >
-            Start a project
-          </a>
+            Start project
+          </Link>
         </div>
 
         {/* Mobile hamburger */}
         <button
           id="nav-toggle"
           onClick={() => setOpen(!open)}
-          className="md:hidden flex flex-col gap-1.5 p-1"
+          className="md:hidden w-12 h-12 rounded-2xl flex items-center justify-center text-black soft-raised-sm active:scale-95 transition-all"
           aria-label="Toggle menu"
         >
-          <span className={`block h-0.5 w-6 bg-black transition-all duration-300 ${open ? "rotate-45 translate-y-2" : ""}`} />
-          <span className={`block h-0.5 w-6 bg-black transition-all duration-300 ${open ? "opacity-0" : ""}`} />
-          <span className={`block h-0.5 w-6 bg-black transition-all duration-300 ${open ? "-rotate-45 -translate-y-2" : ""}`} />
+          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </nav>
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 bg-white border-t border-black/8 ${
-          open ? "max-h-72 opacity-100" : "max-h-0 opacity-0"
+        className={`md:hidden absolute top-full left-0 right-0 overflow-hidden transition-all duration-500 ease-in-out bg-[#f0f0f3]/95 backdrop-blur-xl border-b border-black/5 ${
+          open ? "max-h-[500px] opacity-100 py-12 shadow-2xl" : "max-h-0 opacity-0 py-0"
         }`}
       >
-        <ul className="px-6 py-4 flex flex-col gap-4 text-sm font-medium">
+        <div className="max-w-[75vw] mx-auto flex flex-col gap-10 text-2xl font-[1000] tracking-tighter">
           {links.map((l) => (
-            <li key={l.label}>
-              <a
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="block py-1 hover:text-black/60 transition-colors"
-              >
-                {l.label}
-              </a>
-            </li>
-          ))}
-          <li>
-            <a
-              href="#contact"
+            <Link
+              key={l.label}
+              href={l.href}
               onClick={() => setOpen(false)}
-              className="inline-block mt-1 px-5 py-2 bg-black text-white text-sm font-semibold rounded-full"
+              className="block hover:translate-x-3 transition-transform duration-300 text-black/60 hover:text-black"
             >
-              Start a project
-            </a>
-          </li>
-        </ul>
+              {l.label}
+            </Link>
+          ))}
+          <div className="pt-6">
+            <Link
+              href="/contact"
+              onClick={() => setOpen(false)}
+              className="soft-button-dark inline-block px-12 py-5 text-white text-sm font-black uppercase tracking-widest"
+            >
+              Start project
+            </Link>
+          </div>
+        </div>
       </div>
     </header>
   );
 }
+
+const links = [
+  { label: "Services", href: "/services" },
+  { label: "Story", href: "/#story" },
+  { label: "Work", href: "/#reels" },
+  { label: "Contact", href: "/contact" },
+];

@@ -7,12 +7,14 @@
   --color-brand-soft: #111111;
   --color-muted: #6b6b6b;
   --color-border: #e5e5e5;
-  --color-surface: #f7f7f7;
+  --color-surface: #f0f0f3;
+  /* Slightly off-white for neumorphism */
 
   --animate-fade-up: fade-up 0.6s ease forwards;
   --animate-fade-in: fade-in 0.5s ease forwards;
   --animate-marquee: marquee 28s linear infinite;
   --animate-counter: counter 2s ease-out forwards;
+  --animate-scroll: scroll-indicator 2s ease-in-out infinite;
 }
 
 @keyframes fade-up {
@@ -20,6 +22,7 @@
     opacity: 0;
     transform: translateY(24px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -27,13 +30,141 @@
 }
 
 @keyframes fade-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-indicator {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(200%);
+  }
+}
+
+/* Soft UI / Neumorphic Styles */
+.soft-card {
+  background: #ffffff;
+  border-radius: 2.5rem;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.03),
+    0 20px 50px rgba(0, 0, 0, 0.05),
+    inset 0 -8px 0 rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.soft-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.06),
+    0 30px 70px rgba(0, 0, 0, 0.08),
+    inset 0 -8px 0 rgba(0, 0, 0, 0.03);
+}
+
+.soft-card-dark {
+  background: #111111;
+  border-radius: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 4px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.soft-card-dark:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 30px 60px rgba(0, 0, 0, 0.4),
+    inset 0 -8px 0 rgba(255, 255, 255, 0.02);
+}
+
+.soft-raised-sm {
+  background: #ffffff;
+  box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.05), -6px -6px 16px #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.soft-inset {
+  background: #f0f0f3;
+  box-shadow: inset 4px 4px 8px #d1d1d1, inset -4px -4px 8px #ffffff;
+}
+
+.soft-button-dark {
+  background: #111111;
+  border-radius: 2rem;
+  color: white;
+  box-shadow: 
+    0 10px 30px rgba(0,0,0,0.1),
+    inset 0 -4px 0 rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 4px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.soft-button-dark:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 15px 35px rgba(0,0,0,0.25),
+    inset 0 -4px 0 rgba(0,0,0,0.35);
+}
+
+.soft-button-dark:active {
+  transform: translateY(1px);
+  box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.soft-button-light {
+  background: #ffffff;
+  border-radius: 2rem;
+  color: #000;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.05),
+    inset 0 -4px 0 rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.soft-button-light:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.08),
+    inset 0 -4px 0 rgba(0, 0, 0, 0.03);
+}
+
+.soft-button-light:active {
+  transform: translateY(1px);
+  box-shadow: inset 4px 4px 8px #d1d1d1, inset -4px -4px 8px #ffffff;
+}
+
+.soft-input {
+  background: #f0f0f3;
+  border-radius: 1.25rem;
+  box-shadow: inset 4px 4px 8px #d1d1d1, inset -4px -4px 8px #ffffff;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.soft-input:focus {
+  box-shadow: inset 2px 2px 4px #d1d1d1, inset -2px -2px 4px #ffffff, 0 0 0 2px rgba(0, 0, 0, 0.05);
 }
 
 /* Scroll-triggered animation utility */
@@ -48,18 +179,15 @@
   transform: translateY(0);
 }
 
-/* Smooth number counter */
-.counter-value {
-  display: inline-block;
-}
-
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: #fff;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 3px;
@@ -67,4 +195,10 @@
 
 html {
   font-family: var(--font-sans);
+  background-color: #ffffff;
+  /* Pure white background */
+}
+
+body {
+  background-color: #ffffff;
 }

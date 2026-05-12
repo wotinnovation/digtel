@@ -1,92 +1,73 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, Suspense } from "react";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import Spline from "@splinetool/react-spline";
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    setTimeout(() => el.classList.add("visible"), 100);
-  }, []);
-
   return (
-    <section className="relative min-h-screen flex flex-col justify-center px-6 lg:px-10 pt-20 overflow-hidden bg-white">
-      {/* Subtle grid background */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, #f0f0f0 1px, transparent 1px), linear-gradient(to bottom, #f0f0f0 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
-          maskImage: "radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%)",
-          WebkitMaskImage: "radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%)",
-        }}
-      />
+    <section
+      ref={ref}
+      className="relative h-[90vh] min-h-[600px] flex items-center overflow-hidden bg-white"
+    >
+      {/* Spline 3D Background - Strict Isolation */}
+      <div className="absolute inset-0 z-0 opacity-80 pointer-events-none select-none touch-none">
+        <Suspense fallback={<div className="absolute inset-0 bg-white" />}>
+          <Spline
+            scene="/bg/Serenity in Symmetry.spline"
+            className="w-full h-full pointer-events-none"
+            style={{ pointerEvents: 'none' }}
+          />
+        </Suspense>
+      </div>
 
-      <div className="relative max-w-7xl mx-auto w-full">
-        {/* Tag line */}
-        <div
-          ref={ref}
-          className="reveal mb-8 inline-flex items-center gap-2 border border-black/12 rounded-full px-4 py-1.5 text-xs font-medium text-black/60 uppercase tracking-widest"
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-black inline-block" />
-          Founded in 2023 · UAE-born Agency
-        </div>
+      <div className="max-w-[75vw] mx-auto w-full relative z-10">
+        <div className="max-w-4xl">
+          {/* Badge */}
+          <div className="reveal inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/5 mb-10 border border-black/5">
+            <span className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
+            <span className="text-[10px] font-black uppercase tracking-widest text-black/40">Dubai Digital Agency</span>
+          </div>
 
-        {/* Main headline */}
-        <h1 className="reveal text-[clamp(3rem,9vw,8rem)] font-black leading-[0.95] tracking-tighter text-black mb-6">
-          Building
-          <br />
-          <span className="italic font-light">What&rsquo;s</span>
-          <br />
-          Next!
-        </h1>
+          {/* Headline */}
+          <h1 className="reveal text-5xl lg:text-8xl font-[1000] tracking-tighter leading-[0.85] text-black mb-12 drop-shadow-sm">
+            We Build
+            <br />
+            Digital
+            <br />
+            Products.
+          </h1>
 
-        {/* Sub-headline */}
-        <p className="reveal max-w-xl text-base lg:text-lg text-black/55 leading-relaxed mb-10">
-          Make your brand so useful, people would miss it if it disappeared.
-        </p>
+          {/* Paragraph */}
+          <p className="reveal text-lg lg:text-2xl text-black/50 font-medium leading-relaxed mb-16 max-w-2xl">
+            A UAE-born digital creative agency that helps startups and enterprises scale through
+            high-fidelity design and engineering.
+          </p>
 
-        {/* CTA row */}
-        <div className="reveal flex flex-wrap items-center gap-4">
-          <a
-            id="hero-start-project"
-            href="#contact"
-            className="px-7 py-3.5 bg-black text-white text-sm font-semibold rounded-full hover:bg-black/80 transition-colors duration-200"
-          >
-            Start a project
-          </a>
-          <a
-            id="hero-see-work"
-            href="#reels"
-            className="px-7 py-3.5 border border-black/20 text-black text-sm font-semibold rounded-full hover:bg-black/5 transition-colors duration-200"
-          >
-            See our work →
-          </a>
-        </div>
-
-        {/* Stats row */}
-        <div className="reveal mt-20 pt-8 border-t border-black/8 grid grid-cols-3 gap-6 max-w-lg">
-          {[
-            { num: "500+", label: "Clients" },
-            { num: "1000+", label: "Projects Done" },
-            { num: "5+", label: "Countries" },
-          ].map((s) => (
-            <div key={s.label}>
-              <p className="text-2xl lg:text-3xl font-black tracking-tight">{s.num}</p>
-              <p className="text-xs text-black/45 mt-0.5 font-medium">{s.label}</p>
-            </div>
-          ))}
+          {/* CTA row */}
+          <div className="reveal flex flex-wrap items-center gap-6">
+            <Link
+              id="hero-start-project"
+              href="/contact"
+              className="soft-button-dark px-12 py-5 text-[14px] font-bold uppercase tracking-widest shadow-2xl"
+            >
+              Start a project
+            </Link>
+            <a
+              id="hero-see-work"
+              href="#reels"
+              className="soft-button-light px-12 py-5 text-[14px] font-bold uppercase tracking-widest group flex items-center gap-2"
+            >
+              See our work <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </a>
+          </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-black/25">
-        <span className="text-[10px] tracking-widest uppercase">Scroll</span>
-        <span className="w-px h-8 bg-black/20 animate-pulse" />
-      </div>
+      {/* Optional Gradient Overlay for readability if map is too bright */}
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-white/20 via-transparent to-transparent z-5" />
     </section>
   );
 }
