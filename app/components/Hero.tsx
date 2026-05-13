@@ -2,7 +2,7 @@
 import { useEffect, useRef, Suspense } from "react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import Spline from "@splinetool/react-spline";
+import SoftAurora from "./SoftAurora";
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
@@ -12,16 +12,38 @@ export default function Hero() {
       ref={ref}
       className="relative h-[90vh] min-h-[600px] flex items-center overflow-hidden bg-white"
     >
-      {/* Spline 3D Background - Interactive */}
-      
+      {/* Background Options */}
+      <div className="absolute inset-0 z-0 select-none overflow-hidden">
+        {/* Soft Aurora Background (GLSL / OGL) */}
+        <SoftAurora
+          speed={0.6}
+          scale={1.5}
+          brightness={1}
+          color1="#f7f7f7"
+          color2="#e100ff"
+          noiseFrequency={2.5}
+          noiseAmplitude={1}
+          bandHeight={0.5}
+          bandSpread={1}
+          octaveDecay={0.1}
+          layerOffset={0}
+          colorSpeed={1}
+          enableMouseInteraction
+          mouseInfluence={0.25}
+        />
+      </div>
+
+      {/* Spline 3D Background - Uncomment if you have a .splinecode file or valid URL */}
+      {/* 
       <div className="absolute inset-0 z-0 opacity-80 select-none">
         <Suspense fallback={<div className="absolute inset-0 bg-white" />}>
           <Spline
-            scene="/bg/Serenity in Symmetry.spline"
+            scene="https://prod.spline.design/6Wq1Q7YGyHjSE7EX/scene.splinecode"
             className="w-full h-full"
           />
         </Suspense>
       </div>
+      */}
       
 
       <div className="w-[96%] md:max-w-[75vw] mx-auto relative z-10 px-2 md:px-0 pt-32 md:pt-0">

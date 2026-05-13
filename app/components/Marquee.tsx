@@ -18,7 +18,7 @@ export default function Marquee() {
         <div className="relative py-10 md:py-24">
           <div
             className="flex gap-20 items-center whitespace-nowrap"
-            style={{ animation: "marquee 12s linear infinite" }}
+            style={{ animation: "marquee 8s linear infinite" }}
           >
             {doubled.map((brand, i) => (
               <span

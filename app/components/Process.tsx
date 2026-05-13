@@ -5,21 +5,21 @@ import { Search, Zap, Rocket, ChevronLeft, ChevronRight } from "lucide-react";
 const steps = [
   {
     id: "01/03",
-    icon: <Search className="w-6 h-6 text-white" />,
+    icon: <Search className="w-6 h-6 text-black" />,
     title: "Discover & Scope",
     desc: "Align on problems, data reality, and success metrics. Opportunity brief, KPI model, phased roadmap, effort/cost ranges.",
     duration: "3-7 DAYS",
   },
   {
     id: "02/03",
-    icon: <Zap className="w-6 h-6 text-white" />,
+    icon: <Zap className="w-6 h-6 text-black" />,
     title: "Prototype",
     desc: "De-risk unknowns and validate value quickly. Clickable UX, tech spike repo, initial eval rubric demo.",
     duration: "1-2 WEEKS",
   },
   {
     id: "03/03",
-    icon: <Rocket className="w-6 h-6 text-white" />,
+    icon: <Rocket className="w-6 h-6 text-black" />,
     title: "Engineering & Launch",
     desc: "Production-ready build, rigorous testing, and seamless deployment. Quality assurance and performance optimization.",
     duration: "4-8 WEEKS",
@@ -75,18 +75,18 @@ export default function Process() {
         </div>
 
         {/* Right Slider - 100vw Feel (Bleeds to edge) */}
-        <div className="w-full lg:w-[60vw] lg:pr-0">
+        <div className="w-full lg:w-[60vw] lg:pr-0 lg:ml-20">
           <div 
             ref={scrollRef}
-            className="flex gap-10 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-12 pt-4 px-[2%] lg:pl-10 lg:pr-[12.5vw]"
+            className="flex gap-10 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-12 pt-4 px-[2%] lg:pl-24 lg:pr-[12.5vw]"
           >
             {steps.map((step) => (
               <div
                 key={step.id}
                 className="min-w-[85vw] lg:min-w-[450px] snap-start soft-card bg-white p-10 lg:p-14 relative flex flex-col h-[500px] lg:h-[550px] reveal"
               >
-                {/* Red Icon Box */}
-                <div className="w-16 h-16 rounded-2xl bg-[#ff4d4d] flex items-center justify-center shadow-[0_15px_30px_rgba(255,77,77,0.4)] mb-10 relative overflow-hidden group">
+                {/* Icon Box */}
+                <div className="w-16 h-16 rounded-2xl bg-[#ebebee] flex items-center justify-center shadow-[0_10px_25px_rgba(0,0,0,0.05)] mb-10 relative overflow-hidden group">
                   <div className="absolute inset-0 bg-white/10 animate-pulse" />
                   <div className="relative z-10">{step.icon}</div>
                 </div>

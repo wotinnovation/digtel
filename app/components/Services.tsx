@@ -8,28 +8,28 @@ const services = [
     title: "Digital Marketing",
     desc: "Data-driven campaigns across paid, social, and content channels that convert audiences into loyal customers.",
     tags: ["Paid Ads", "Social Media", "Email Marketing"],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
+    image: "/images/digital.jpg",
   },
   {
     id: "02",
     title: "Website Development",
     desc: "High-performance, beautifully crafted websites and web apps built with modern stacks for speed and scale.",
     tags: ["React / Next.js", "UX/UI Design", "E-commerce"],
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/webdevelopment.jpeg",
   },
   {
     id: "03",
     title: "SEO",
     desc: "Organic growth strategies that earn top search positions and lasting visibility without burning ad budget.",
     tags: ["Technical SEO", "Content Strategy", "Link Building"],
-    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=2074&auto=format&fit=crop",
+    image: "/images/seo.jpeg",
   },
   {
     id: "04",
     title: "Video Production",
     desc: "Cinematic storytelling — from concept and scripting through production and post — that stops the scroll.",
     tags: ["Brand Films", "Motion Graphics", "Color Grading"],
-    image: "https://images.unsplash.com/photo-1492691523567-6119203ad9f3?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/videoproduction.jpeg",
   },
 ];
 

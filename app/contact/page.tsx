@@ -46,13 +46,6 @@ export default function ContactPage() {
               <div className="absolute inset-0 bg-black/5" />
             </div>
 
-            <div className="flex gap-2 mb-8 px-2">
-              <div className="w-2 h-2 rounded-full bg-black/10" />
-              <div className="w-2 h-2 rounded-full bg-black/10" />
-              <div className="w-2 h-2 rounded-full bg-black/10" />
-              <div className="w-2 h-2 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.5)]" />
-            </div>
-
             <div className="w-full h-px bg-black/5 mb-12" />
 
             <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1.5fr_1fr_1fr] gap-12 lg:gap-16 px-2">

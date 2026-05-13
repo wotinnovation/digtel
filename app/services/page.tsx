@@ -12,35 +12,35 @@ const serviceData = [
     desc: "Our performance marketing team focuses on measurable growth. Every campaign is built with clear goals, whether it is boosting sales, generating leads, or nurturing stronger customer relationships.",
     deliverables: "Ecommerce, Lead Gen, Creative Strategy, Automation, Email Marketing",
     industry: "Ecommerce / B2B / Retail",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/digital.jpg",
   },
   {
     title: "SEO Solutions",
     desc: "Our SEO team helps businesses stand out in search results and attract people who are already looking for what they offer. We focus on connecting your brand with qualified visitors ready to engage.",
     deliverables: "Technical SEO, On-Page/Off-Page, Content Strategy, UX Audit",
     industry: "Tech / Healthcare / Finance",
-    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=2074&auto=format&fit=crop",
+    image: "/images/seo.jpeg",
   },
   {
     title: "Influencer Marketing",
     desc: "Helping brands grow their presence through strong storytelling and influencer-driven strategies. We focus on building awareness and creating meaningful conversations in the right spaces.",
     deliverables: "Influencer Sourcing, Campaign Management, Content Strategy",
     industry: "Lifestyle / Fashion / F&B",
-    image: "https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=2031&auto=format&fit=crop",
+    image: "/images/influencer-marketing.jpeg",
   },
   {
     title: "Web Development & UI/UX",
     desc: "Turning ideas into functional, user-focused digital experiences. From websites to apps, we build platforms that perform smoothly and guide visitors toward meaningful actions.",
     deliverables: "Next.js Apps, UI/UX Design, Ecommerce Platforms, Maintenance",
     industry: "Startups / Enterprise / SaaS",
-    image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/webdevelopment.jpeg",
   },
   {
     title: "Creative Production",
     desc: "Our production house manages a wide range of creative projects, from large-scale advertising campaigns to specialised content. End-to-end solutions that help brands tell resonant stories.",
     deliverables: "Video Production, Ad Campaigns, Line Production, Post-Production",
     industry: "Entertainment / Corporate / Broadcast",
-    image: "https://images.unsplash.com/photo-1492691523567-6119203ad9f3?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/videoproduction.jpeg",
   }
 ];
 
@@ -58,11 +58,9 @@ export default function ServicesPage() {
             <span className="text-[10px] font-black uppercase tracking-widest text-black/40">Expertise</span>
           </div>
           <h1 className="text-[clamp(3rem,8vw,8rem)] font-[1000] tracking-tighter leading-[0.85] text-black mb-12">
-            Transform
+            Transform Your
             <br />
-            Your Digital
-            <br />
-            Presence
+            Digital Presence
           </h1>
           <p className="max-w-2xl text-lg lg:text-xl text-black/50 font-medium leading-relaxed">
             We craft exceptional digital experiences that captivate audiences and drive results through innovative design and cutting-edge technology.
@@ -85,14 +83,6 @@ export default function ServicesPage() {
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
               />
               <div className="absolute inset-0 bg-black/5" />
-            </div>
-
-            {/* Status Dots */}
-            <div className="flex gap-2 mb-8 px-2">
-              <div className="w-2 h-2 rounded-full bg-black/10" />
-              <div className="w-2 h-2 rounded-full bg-black/10" />
-              <div className="w-2 h-2 rounded-full bg-black/10" />
-              <div className="w-2 h-2 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.5)]" />
             </div>
 
             {/* Divider */}
